@@ -1,0 +1,18 @@
+.iconImage {
+    height: 120px;
+    width: 220px;
+   
+}
+
+.headerImage {
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.separator{
+    height: 120px;
+    width: 100%;
+    object-fit: cover;
+   
+}

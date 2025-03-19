@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+
+body {
+    font-family: Arial, sans-serif; 
+    background-color: #FF8000;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.broder {
+  margin: 20px 80px;
+}
+.content_beg_1440px {
+    max-width: 1440px;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    
+}
+
+.separator {
+    background-color: gray;
+    height: 120px;
+    width: 100%;
+}
+
+.bewertung {
+    color: aliceblue;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 24px 0px;
+}
+
+h2 {
+    color: white;
+}
+/* ############################################################################################################################ */
+h3 {
+  font-size: 22px;
+  color: #FF8000;
+}
+
+p {
+  margin: 8px 0px;
+}
+
+.test{
+  min-width: 740px; 
+  /* muss villeicht noch mal geändert werden? soll den Preis in eine Reihe Bringen */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ##################################### Burger Menu extern ############################################# */
+.burger {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    background: transparent;
+    cursor: pointer;
+    display: block;
+  }
+  
+  .burger input {
+    display: none;
+  }
+  
+  .burger span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: black;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  
+  .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+  
+  .burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+  }
+  
+  .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+  }
+  
+  .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 28px;
+    left: 5px;
+  }
