@@ -16,6 +16,7 @@ function mealTemplateToIndex(mealIndex) {
     </div>
 
  `
+ // Diese funktion entnimmt die Informationen aus der Datenbank und zeigt diese als HTML an
 };
 
 function cartTemplateToIndex (cartIndex) {
@@ -29,15 +30,16 @@ function cartTemplateToIndex (cartIndex) {
 
         <div class="price-and-btn">
             <div class="add-and-delet">
-                <button>+</button>
-                <p>1</p>
-                <button>-</button>
+                <button onclick="increaseAmount(${cartIndex})">+</button>
+                <p id="quantity-${cartIndex}">${meal.quantity}</p>
+                <button onclick="decreaseAmount(${cartIndex})">-</button>
             </div>
             <p>Preis: ${meal.preis.toFixed(2) + "€"}</p>
 
         </div>
         
-
-    </div>
     `
 };
+
+// Diese funktion benutzt die daten
+

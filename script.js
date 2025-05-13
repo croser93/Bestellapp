@@ -1,27 +1,27 @@
 
 
 function init() {
-    loadFromLocalStorage();
-    loadCartFromLocalStorage();
-    renderDbMeal();   
-    renderCart();     
+    loadFromLocalStorage(); // get the saved Meals form local storage 
+    loadCartFromLocalStorage(); // get the saved Cart
+    renderDbMeal();   // shows the saved Meals
+    // renderCart();     // shows the current Cart
 }
 
 function loadFromLocalStorage() {
-    const mealDB = localStorage.getItem('meal');
+    const mealDB = localStorage.getItem('meal'); // read "meal" of the local storage
     if (mealDB) {
-        meals = JSON.parse(mealDB);
+        meals = JSON.parse(mealDB); // change it in JS Object
     }
 }
 
 function renderDbMeal() {
 
-    const mealRef = document.getElementById("meal-section")
+    const mealRef = document.getElementById("meal-section")  //Gets the HTML area for the meals
 
-    mealRef.innerHTML = ""
+    mealRef.innerHTML = "" // clean / empty
 
     for (let mealIndex = 0; mealIndex < meals.length; mealIndex++) {
-        mealRef.innerHTML += mealTemplateToIndex(mealIndex)
+        mealRef.innerHTML += mealTemplateToIndex(mealIndex) // Inserts each meal using a template
 
           
     }
@@ -31,20 +31,20 @@ function renderDbMeal() {
 
 // ########################################################## Cart Funktion ##########################################################
 function loadCartFromLocalStorage() {
-    const cartDB = localStorage.getItem('cart');
+    const cartDB = localStorage.getItem('cart'); // read "cart" form the local Storage
     if (cartDB) {
-        cart = JSON.parse(cartDB);
+        cart = JSON.parse(cartDB); // change it
     }
 }
 
 function renderCart() {
 
-    const cartRef = document.getElementById("cart-section")
+    const cartRef = document.getElementById("cart-section") 
 
-    cartRef.innerHTML = ""
+    cartRef.innerHTML = ""// clean / empty
 
     for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
-        cartRef.innerHTML += cartTemplateToIndex(cartIndex)
+        cartRef.innerHTML += cartTemplateToIndex(cartIndex) // get the content
 
           
     }
@@ -54,21 +54,23 @@ function renderCart() {
 
 // ########################################################## Add to Cart ##########################################################
 
-function addToCart(mealIndex) {
+// function addToCart(mealIndex) {
+//     const selectedMeal = meals[mealIndex];// Get the meal
 
-    // let selectMeal = meals[mealIndex]
-    // cart.push(selectMeal)
+//     const existing = cart.find(m => m.name === selectedMeal.name);
+//     if (existing) {
+//         existing.quantity++;
+        
+
+//     } else {
+//         // Erstes Mal → quantity hinzufügen
+//         const mealCopy = { ...selectedMeal, quantity: 1 };
+//         cart.push(mealCopy);
+//     }
+
+//         renderCart();  // Display the new shopping cart
+
     
-    // renderCart();
-    if (mealIndex < 0 || mealIndex >= meals.length) {
-        console.error("Ungültiger Index:", mealIndex);
-        return;
-    }
-
-    const selectedMeal = meals[mealIndex];
-    cart.push(selectedMeal);
-    // 6. Aktualisiere die Anzeige des Warenkorbs
-    renderCart();
-
+        
     
-}
+// }

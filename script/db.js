@@ -61,12 +61,5 @@ let meals = [
     }
 ]
 
-let cart = [
-    {
-    "name": "Tiramisu",
-    "rezept": "Italienischer Klassiker aus Löffelbiskuits, Kaffee, Mascarpone und Kakao.",
-    "preis": 4.99,
-    "beschreibung": "Ein süßer Abschluss mit einem Hauch von Kaffee."
-    }
-]
+let cart = []
 
