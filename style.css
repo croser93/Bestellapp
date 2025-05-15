@@ -42,6 +42,10 @@ header {
 h2 {
     color: white;
 }
+
+.margintop24{
+  margin-top: 24px;
+}
 /* ############################################################################################################################ */
 h3 {
   font-size: 22px;
@@ -57,8 +61,61 @@ p {
   /* muss villeicht noch mal geändert werden? soll den Preis in eine Reihe Bringen */
 }
 
+/* ##################################### Dialog ############################################# */
 
 
+.body-overlay{
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(255, 255, 255, 0.6);
+opacity: 0;
+pointer-events: none;
+
+}
+
+.dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 8px;
+  padding: 100px 100px;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  pointer-events: none;
+
+}
+
+.sichtbar{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  line-height: 32px;
+  margin: 10px;
+  border-radius: 8px;
+  height:54px;
+  width: 360px;
+}
+
+.close_dialog{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #FF8000;
+
+  
+}
 
 
 

@@ -58,7 +58,37 @@ let meals = [
         "rezept": "Italienischer Klassiker aus Löffelbiskuits, Kaffee, Mascarpone und Kakao.",
         "preis": 4.99,
         "beschreibung": "Ein süßer Abschluss mit einem Hauch von Kaffee."
-    }
+    },
+    {
+    "name": "Ratatouille",
+    "rezept": "Geschmortes Gemüsegericht aus Zucchini, Aubergine, Paprika und Tomaten.",
+    "preis": 7.49,
+    "beschreibung": "Ein französischer Klassiker – gesund und aromatisch."
+  },
+  {
+    "name": "Lachsfilet mit Zitronen-Dill-Soße",
+    "rezept": "Zartes Lachsfilet serviert mit einer frischen Zitronen-Dill-Soße.",
+    "preis": 12.99,
+    "beschreibung": "Leicht, edel und perfekt für Fischliebhaber."
+  },
+  {
+    "name": "Gnocchi in Gorgonzola-Soße",
+    "rezept": "Kartoffelgnocchi in cremiger Gorgonzola-Käsesoße.",
+    "preis": 9.89,
+    "beschreibung": "Sämige, würzige Verführung aus Norditalien."
+  },
+  {
+    "name": "Thai Curry mit Kokosmilch",
+    "rezept": "Würziges Curry mit Gemüse, Kokosmilch und roter Currypaste.",
+    "preis": 10.49,
+    "beschreibung": "Exotisch, leicht scharf und sehr aromatisch."
+  },
+  {
+    "name": "Apfelstrudel",
+    "rezept": "Warmer Strudel mit Äpfeln, Zimt und Rosinen im knusprigen Teig.",
+    "preis": 4.59,
+    "beschreibung": "Österreichischer Dessertklassiker – süß und fruchtig."
+  }
 ]
 
 let cart = []

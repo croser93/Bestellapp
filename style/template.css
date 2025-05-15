@@ -1,21 +1,25 @@
 /* ################################################# Cart ########################################################################### */
 
 .basked {
-    width: 350px;
+    width: 450px;
     background-color: white;
     border-style:groove;
     border-color: gray;
     border-radius: 4px;
     padding: 16px;
     flex-grow: 1;
+    height: 1290px; /* max Height?*/
+    
     
 }
   
   .sticky_warenkorb {
-    background-color: #FF8000;
     height: 600px;
     border-radius: 4px;
+    overflow-y: auto;
 }
+
+
   
 .test444 {
   position: sticky;
@@ -38,6 +42,35 @@
   
 }
 
+.total-line{
+  margin-top: 32px;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+}
+
+.pay_delete {
+margin-top: 8px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.bestellen{
+  background-color: #FF8000;
+  color: white;
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 50px;
+}
+
+.delete {
+height: 36px;
+}
+
 .cart-item {
     display: flex;
     justify-content: space-between;
@@ -51,7 +84,10 @@
 }
 
 .h3-cart{
+    font-size: 18px;
     color: black;
+    font-weight: 400;
+
 }
 
 .price-and-btn {
@@ -61,10 +97,7 @@
 
 .add-and-delet {
   display: flex;
-  background-color: gray;
   align-items: center;
-  padding: 10px;
-  border-radius: 28px;
   gap: 16px;
   margin-right: 8px;
 }

@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lieferbocko</title>
+    <link rel="icon" href="./assets/icon/fav.png">
+
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./style/image.css">
     <link rel="stylesheet" href="./style/footer.css">
@@ -43,26 +45,27 @@
         <div class="basked">
             <div class="test444">
                 <div class="sticky_warenkorb" id="cart-section"></div>
-                <div>
-                    <table>
-                        <tr>
-                            <td>Zwischensumme:</td>
-                            <td></td>
-                            <td id="subtotal">0€</td>
-                        </tr>
-                        <tr>
-                            <td>Liefergebühr:</td>
-                            <td></td>
-                            <td id="delivery">5.99€</td>
-                        </tr>
-                        <tr>
-                            <td>Gesamtsumme:</td>
-                            <td></td>
-                            <td id="total">0€</td>
-                        </tr>
-                    </table>
+
+                <div class="total-line">
+                    <div class="summary-line">
+                        <span>Zwischensumme:</span>
+                        <span id="subtotal">0€</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Liefergebühr:</span>
+                        <span id="delivery">5.99€</span>
+                    </div>
+                    <div class="summary-line total">
+                        <span>Gesamtsumme:</span>
+                        <span id="total">0€</span>
+                    </div>
+                    
                 </div>
-    
+
+                <div class="pay_delete">
+                    <Button class="bestellen" onclick="toggleDialog(event)">Bestellen</Button>
+                    <Button onclick="cleanCart()"><img class="delete" src="assets/icon/trash.png" alt="junk"></Button>
+                </div>
             </div>
         </div>
     </section>
@@ -70,12 +73,13 @@
     <section>
         <div ><img class="separator" src="./assets/separator/sep2.jpg" alt=""></div> 
     </section>
+
     
     <footer>
         <div class="footer_section full-width-container">
             <div class="content_beg_1440px broder">
                     <div>
-                        <a href="index.html"><img class="icon-image" src="" alt="logo"></a> 
+                        <a href="index.html"><img class="icon-image" src="./assets/icon/fav.png" alt="logo"></a> 
                     </div>
                      <div class="footer_middl_line">
                         <a class="impressum" href="./Index/impressum.html">Impressum</a>
@@ -92,6 +96,37 @@
         </div>
     </footer>
     
-    <div></div>
+    <section id="body-overlay" class="body-overlay">
+        <div class="dialog" id="start_dialog">
+            <button class="close_dialog" onclick="toggleDialog(event)"> x</button>
+            <h3>Gibt deine Daten ein</h3>
+            <form class="margintop24" action="">
+                <input type="text" placeholder="Vorname" class="eingabefeld">
+                <input type="text" placeholder="Nachname" class="eingabefeld">  
+                <input type="text" placeholder="Straße" class="eingabefeld">
+                <input type="text" placeholder="Hausnummer" class="eingabefeld">
+                <input type="text" placeholder="Postleitzahl" class="eingabefeld">  
+                <input type="text" placeholder="Email" class="eingabefeld">  
+                <div id="cart-section" class="total-line">
+                    <div class="summary-line">
+                        <span>Zwischensumme:</span>
+                        <span id="dialog_subtotal">0€</span>
+                    </div>
+                    <div class="summary-line">
+                        <span>Liefergebühr:</span>
+                        <span id="dialog_delivery">5.99€</span>
+                    </div>
+                    <div class="summary-line total">
+                        <span>Gesamtsumme:</span>
+                        <span id="dialog_total">0€</span>
+                    </div>
+                    
+                </div>
+                    <Button class="bestellen margintop24" onclick="openDialog()">kostenpflichtig Bestellen</Button>
+                </a>
+            </form>
+
+        </div>
+    </section>
 </body>
 </html>

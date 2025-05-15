@@ -25,7 +25,7 @@ function cartTemplateToIndex (cartIndex) {
 
     <div class="cart-item">
         <div>
-            <h3 class="h3-cart">${meal.name}</h3>
+            <span class="h3-cart">${meal.name}</span>
         </div>
 
         <div class="price-and-btn">
@@ -33,10 +33,10 @@ function cartTemplateToIndex (cartIndex) {
                 <button onclick="increaseAmount(${cartIndex})">+</button>
                 <p id="quantity-${cartIndex}">${meal.quantity}</p>
                 <button onclick="decreaseAmount(${cartIndex})">-</button>
-            </div>
-            <p>Preis: ${meal.preis.toFixed(2) + "€"}</p>
-
         </div>
+            <p>stk: ${meal.preis.toFixed(2) + "€"}</p>
+
+    </div>
         
     `
 };

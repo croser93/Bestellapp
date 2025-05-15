@@ -65,11 +65,48 @@ function updatePrices() {
     let delivery = subtotal >= 60 ? 0 :5.99;
     let total = subtotal + delivery;
 
+    if (subtotal <= 0) {
+        total = 0
+        
+    }
+
     document.getElementById("subtotal").innerText = subtotal.toFixed(2)+ "€";
     document.getElementById("delivery").innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
     document.getElementById("total").innerText = total.toFixed(2)+ "€";
+
+    document.getElementById('dialog_subtotal').innerText = subtotal.toFixed(2)+ "€";
+    document.getElementById('dialog_delivery').innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
+    document.getElementById('dialog_total').innerText = total.toFixed(2)+ "€";
+    
     renderCart();
 
 }
+
+function cleanCart() {
+   
+   cart.length = 0
+
+    updatePrices();
+    renderCart();
+}
+
+function toggleDialog(event) {
+
+  if (event.target !== event.currentTarget) 
+    return
+
+    let overlay = document.getElementById('body-overlay');
+    let dialog = document.getElementById('start_dialog');
+    
+    overlay.classList.toggle('sichtbar');
+    dialog.classList.toggle('sichtbar')
+
+
+
+  }
+
+
+
+
 
 
