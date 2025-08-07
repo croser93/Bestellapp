@@ -1,13 +1,29 @@
 .iconImage {
-    height: 120px;
     width: 220px;
    
 }
 
 .headerImage {
-    height: 120px;
+    height: 300px;
     width: 100%;
     object-fit: cover;
+}
+
+.headerInfo {
+    position: absolute;
+    top: 320px;
+    left: 10px;
+    
+}
+
+.info {
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 24px 0px;
+    display: flex;
+    gap: 24px;
 }
 
 .separator{
@@ -15,4 +31,12 @@
     width: 100%;
     object-fit: cover;
    
+}
+
+.foodImage{
+  height: 80px;
+  width: 80px;
+  border-radius: 8px;
+  margin-left: 8px;
+  object-fit: cover;
 }

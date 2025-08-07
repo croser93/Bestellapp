@@ -13,6 +13,7 @@ function addToCart(mealIndex) {
     }
         updatePrices();
         renderCart(); 
+        updateCartBadge();
  
 }
 
@@ -25,6 +26,7 @@ function increaseAmount(cartIndex) {
 
         updatePrices();
         renderCart();
+        updateCartBadge();
         
     
         const quantityRef = document.getElementById(`quantity-${cartIndex}`);
@@ -43,6 +45,7 @@ function decreaseAmount(cartIndex) {
         }
         updatePrices();
         renderCart();
+        updateCartBadge();
 
         const quantityRef = document.getElementById(`quantity-${cartIndex}`);
         if (quantityRef) {
@@ -82,18 +85,33 @@ function updatePrices() {
 
 }
 
-function cleanCart() {
+function cleanCartOnly(cartIndex) {
+
+    cart.splice(cartIndex,1);
+
+    updatePrices();
+    renderCart();
+    updateCartBadge();
+}
+
+function cleanCartAll() {
    
    cart.length = 0
 
     updatePrices();
     renderCart();
+    updateCartBadge();
 }
 
 function toggleDialog(event) {
 
   if (event.target !== event.currentTarget) 
     return
+
+   if (cart.length === 0) {
+        alert("⚠️ Du musst erst etwas in den Warenkorb legen.");
+        return;
+    }
 
     let overlay = document.getElementById('body-overlay');
     let dialog = document.getElementById('start_dialog');
@@ -105,8 +123,51 @@ function toggleDialog(event) {
 
   }
 
+  document.addEventListener("DOMContentLoaded", function () {
+    const formular = document.getElementById("bestellformular");
+    const dialog = document.getElementById("start_dialog");
+
+    if (formular) {
+        formular.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Gesamtpreis holen
+            const preisText = document.getElementById("dialog_total").textContent;
+
+            // Formular durch Bestätigung ersetzen
+            dialog.innerHTML = `
+                <div class="confirmation">
+                    <div class="loader"></div>
+                    <p>🎉 Vielen Dank für deine Bestellung über <strong>${preisText}</strong>!</p>
+                    <p>Deine Bestellung ist bei uns eingegangen und wird jetzt bearbeitet.</p>
+                    <p>Du wirst gleich zurückgeleitet...</p>
+                </div>
+            `;
+
+            // Nach 3,5 Sekunden Seite neu laden
+            setTimeout(() => {
+                location.reload();
+            }, 3500);
+        });
+    }
+});
 
 
+function getTotalQuantity() {
+    return cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+}
+
+function updateCartBadge() {
+    const badge = document.getElementById('cart-quantity');
+    const totalQty = getTotalQuantity();
+
+    if (badge) {
+        if (badge) {
+        badge.innerText = totalQty > 0 ? totalQty : "0";  // Mindestens 0 anzeigen
+        badge.style.display = 'flex';  // Immer anzeigen
+        }
+    }
+}
 
 
 

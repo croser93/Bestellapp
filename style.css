@@ -1,65 +1,54 @@
+/* ##################################### Generally ############################################# */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; 
+margin: 0;
+padding: 0;
+box-sizing: border-box; 
 }
 
 
 body {
-    font-family: Arial, sans-serif; 
-    background-color: #FF8000;
+font-family: Arial, sans-serif; 
+background-color: #FF8000;
+overflow: auto;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+display: flex;
+align-items: center;
+justify-content: space-between;
 }
 
 .broder {
-  margin: 20px 80px;
+margin: 20px 80px;
 }
 .content_beg_1440px {
-    max-width: 1440px;
-    box-sizing: border-box;
-    padding: 10px 10px;
-    
+max-width: 1440px;
+box-sizing: border-box;
+padding: 10px 10px;
+
 }
 
 .separator {
-    background-color: gray;
-    height: 120px;
-    width: 100%;
-}
-
-.bewertung {
-    color: aliceblue;
-    font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin: 24px 0px;
+background-color: gray;
+height: 120px;
+width: 100%;
 }
 
 h2 {
-    color: white;
+color: white;
+font-size: 46px;
+}
+
+h3 {
+font-size: 22px;
+color: #FF8000;
 }
 
 .margintop24{
-  margin-top: 24px;
-}
-/* ############################################################################################################################ */
-h3 {
-  font-size: 22px;
-  color: #FF8000;
+margin-top: 24px;
 }
 
-p {
-  margin: 8px 0px;
-}
-
-.test{
-  min-width: 740px; 
-  /* muss villeicht noch mal geändert werden? soll den Preis in eine Reihe Bringen */
-}
 
 /* ##################################### Dialog ############################################# */
 
@@ -73,114 +62,142 @@ right: 0;
 background-color: rgba(255, 255, 255, 0.6);
 opacity: 0;
 pointer-events: none;
+transition: ease-in-out 500ms;
 
 }
 
 .dialog {
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  border-radius: 8px;
-  padding: 100px 100px;
-  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  pointer-events: none;
+position: fixed;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+border-radius: 8px;
+padding: 100px 100px;
+box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
+opacity: 0;
+pointer-events: none;
+transition: ease-in-out 600ms;
 
 }
 
 .sichtbar{
-  opacity: 1;
-  pointer-events: auto;
+opacity: 1;
+pointer-events: auto;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
+display: flex;
+flex-direction: column;
 }
 
 input {
-  line-height: 32px;
-  margin: 10px;
-  border-radius: 8px;
-  height:54px;
-  width: 360px;
+line-height: 32px;
+margin: 10px;
+border-radius: 8px;
+height:54px;
+width: 360px;
 }
 
 .close_dialog{
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  color: #FF8000;
+position: absolute;
+top: 10px;
+right: 10px;
+color: #FF8000;
 
-  
 }
 
+.slogan_div{
+margin: 240px 16px;
+}
+
+.slogan {
+font-size: 22px;
+color: rgba(0, 0, 0, 0.6);
+text-align: center;
+
+}
+
+iframe {
+border-radius: 8px;
+height: 250px;
+width: 1000px;
+}
+
+/* ##################################### Cart Icon  ############################################# */
+
+#cart-Icon{
+background: none;
+border: none;
+position: relative;
+padding: 0;
+}
+
+.cart-image{
+height: 48px;
+border-radius: 12px;
+}
+
+.cart-basked{
+width: 55px;
+flex-grow: 1;
+height: 1940px;
+}
+
+.cart-Icon-Container{
+position: sticky; 
+top: 15px;
+flex-direction: column;
+margin: 8px;
+}
+
+#cart-quantity {
+position: absolute;
+top: 2px; 
+right: 2px; 
+background: #ff0000;
+color: white;
+border-radius: 50%;
+padding: 2px 7px;
+font-size: 14px;
+display: flex;
+align-items: center;
+justify-content: center;
+min-width: 20px;
+height: 20px;
+}
+
+.cartResponsivContainer{
+display: flex;
+justify-content: center;
+margin-bottom: 16px;
+width: calc(100% - 308px);
+align-items: center;
+}
+
+.cartResponsiv{
+background-color: rgb(48, 117, 247);
+color: white;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+padding: 16px 340px;
+border-radius: 16px;
+width: 100%;
+flex: 1;
 
 
 
+}
 
+/* ##################################### Responsiv ############################################# */
+@media (max-width: 900px){
+    p{
+      color: black;
+      font-size: 16px;
+    }
 
+    h2{
+      font-size: 32px;
+      color: black;
 
-
-/* ##################################### Burger Menu extern ############################################# */
-.burger {
-    position: relative;
-    width: 40px;
-    height: 30px;
-    background: transparent;
-    cursor: pointer;
-    display: block;
-  }
-  
-  .burger input {
-    display: none;
-  }
-  
-  .burger span {
-    display: block;
-    position: absolute;
-    height: 4px;
-    width: 100%;
-    background: black;
-    border-radius: 9px;
-    opacity: 1;
-    left: 0;
-    transform: rotate(0deg);
-    transition: .25s ease-in-out;
-  }
-  
-  .burger span:nth-of-type(1) {
-    top: 0px;
-    transform-origin: left center;
-  }
-  
-  .burger span:nth-of-type(2) {
-    top: 50%;
-    transform: translateY(-50%);
-    transform-origin: left center;
-  }
-  
-  .burger span:nth-of-type(3) {
-    top: 100%;
-    transform-origin: left center;
-    transform: translateY(-100%);
-  }
-  
-  .burger input:checked ~ span:nth-of-type(1) {
-    transform: rotate(45deg);
-    top: 0px;
-    left: 5px;
-  }
-  
-  .burger input:checked ~ span:nth-of-type(2) {
-    width: 0%;
-    opacity: 0;
-  }
-  
-  .burger input:checked ~ span:nth-of-type(3) {
-    transform: rotate(-45deg);
-    top: 28px;
-    left: 5px;
-  }
+    }
+}

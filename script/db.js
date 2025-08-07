@@ -1,93 +1,112 @@
 let meals = [
-    {
-        "name": "Döner",
-        "rezept": "Hähnchenfleisch, Salat, Tomaten, Zwiebeln, Joghurtsauce, in Fladenbrot gewickelt.",
-        "preis": 5.99,
-        "beschreibung": "Ein klassischer Döner mit frischen Zutaten und hausgemachter Sauce."
-    },
-    {
-        "name": "Pizza Margherita",
-        "rezept": "Tomatensauce, Mozzarella, frische Basilikumblätter, auf dünnem Teig gebacken.",
-        "preis": 7.50,
-        "beschreibung": "Eine einfache aber köstliche Pizza mit italienischem Flair."
-    },
-    {
-        "name": "Rindersteak",
-        "rezept": "Saftiges Rindersteak, medium gebraten, serviert mit Kartoffelpüree und Gemüse.",
-        "preis": 15.99,
-        "beschreibung": "Perfekt gegartes Steak für Fleischliebhaber."
-    },
-    {
-        "name": "Spaghetti Carbonara",
-        "rezept": "Spaghetti mit Pancetta, Ei, Parmesan und schwarzem Pfeffer.",
-        "preis": 8.99,
-        "beschreibung": "Cremige Pasta nach traditioneller italienischer Art."
-    },
-    {
-        "name": "Vegetarischer Burger",
-        "rezept": "Gemüsepatty aus Bohnen und Gemüse, serviert mit Salat, Tomate und spezieller Sauce im Brioche-Bun.",
-        "preis": 6.50,
-        "beschreibung": "Ein leckerer Burger, ganz ohne Fleisch."
-    },
-    {
-        "name": "Sushi Platte",
-        "rezept": "Eine Auswahl an Sushi, inklusive Maki, Nigiri und Sashimi, serviert mit Wasabi und Sojasauce.",
-        "preis": 12.99,
-        "beschreibung": "Frische Sushi-Variationen für den asiatischen Geschmack."
-    },
-    {
-        "name": "Chicken Curry",
-        "rezept": "Hähnchen in würziger Currysoße mit Reis und Naan-Brot.",
-        "preis": 9.99,
-        "beschreibung": "Würziges indisches Curry mit zartem Hähnchen."
-    },
-    {
-        "name": "Caesar Salad",
-        "rezept": "Römersalat, Croutons, Parmesan und hausgemachtes Caesar Dressing.",
-        "preis": 6.00,
-        "beschreibung": "Ein frischer und knackiger Salat, perfekt als Vorspeise oder leichtes Hauptgericht."
-    },
-    {
-        "name": "Lasagne",
-        "rezept": "Schichten von Nudeln, Hackfleischsoße, Béchamel und Käse, gebacken bis goldbraun.",
-        "preis": 10.50,
-        "beschreibung": "Eine reichhaltige und herzhafte Lasagne, wie von Oma."
-    },
-    {
-        "name": "Tiramisu",
-        "rezept": "Italienischer Klassiker aus Löffelbiskuits, Kaffee, Mascarpone und Kakao.",
-        "preis": 4.99,
-        "beschreibung": "Ein süßer Abschluss mit einem Hauch von Kaffee."
-    },
-    {
-    "name": "Ratatouille",
-    "rezept": "Geschmortes Gemüsegericht aus Zucchini, Aubergine, Paprika und Tomaten.",
-    "preis": 7.49,
-    "beschreibung": "Ein französischer Klassiker – gesund und aromatisch."
+  {
+    "name": "Döner Kebab",
+    "beschreibung": "Türkisches Fladenbrotgericht mit mariniertem Fleisch und frischem Gemüse.",
+    "preis": 5.99,
+    "kategorie": "Döner",
+    "bild": "/assets/img/Döner.png"
   },
   {
-    "name": "Lachsfilet mit Zitronen-Dill-Soße",
-    "rezept": "Zartes Lachsfilet serviert mit einer frischen Zitronen-Dill-Soße.",
-    "preis": 12.99,
-    "beschreibung": "Leicht, edel und perfekt für Fischliebhaber."
+    "name": "Döner Teller",
+    "beschreibung": "Gegrilltes Dönerfleisch auf einem Teller mit Beilagen und Salat.",
+    "preis": 8.99,
+    "kategorie": "Döner",
+    "bild": "/assets/img/DönerTeller.png"
+  },
+  {
+    "name": "Dürüm Döner",
+    "beschreibung": "Dönerfleisch und frisches Gemüse gerollt in einem dünnen Fladenbrot.",
+    "preis": 6.99,
+    "kategorie": "Döner",
+    "bild": "/assets/img/Dürüm.jpg"
+  },
+
+  {
+    "name": "Pizza Margherita",
+    "beschreibung": "Italienische Pizza mit Tomate, Mozzarella und Basilikum.",
+    "preis": 7.50,
+    "kategorie": "Pizza",
+    "bild": "/assets/img/PizzaMar.jpg"
+  },
+
+  {
+    "name": "Pizza Diabolo (Scharf)",
+    "beschreibung": "Italienische Pizza Hackfleisch & Peperonis.",
+    "preis": 8.99,
+    "kategorie": "Pizza",
+    "bild": "/assets/img/PizzaDia.jpg"
+  },
+
+  {
+    "name": "Pizza Salami",
+    "beschreibung": "Klassiker mit Tomaten, Mozzarella und herzhafter Salami.",
+    "preis": 8.50,
+    "kategorie": "Pizza",
+    "bild": "/assets/img/PizzaSalami.jpg"
+  },
+  {
+    "name": "Pizza Funghi",
+    "beschreibung": "Pizza mit Champignons, Tomatensauce und Mozzarella.",
+    "preis": 8.00,
+    "kategorie": "Pizza",
+    "bild": "/assets/img/PizzaFun.jpg"
+  },
+  {
+    "name": "Spaghetti Bolognese",
+    "beschreibung": "Pasta in Tomatensauce & Hackfleisch.",
+    "preis": 8.49,
+    "kategorie": "Nudeln",
+    "bild": "/assets/img/SpaghettiBolo.jpg"
+  },
+  {
+    "name": "Spaghetti Carbonara",
+    "beschreibung": "Pasta mit Speck, Ei und Parmesan nach italienischer Art.",
+    "preis": 8.99,
+    "kategorie": "Nudeln",
+    "bild": "/assets/img/SpaghettiCar.jpg"
+  },
+  {
+    "name": "Lasagne",
+    "beschreibung": "Geschichtete Nudeln mit Hackfleischsoße und Käse überbacken.",
+    "preis": 10.50,
+    "kategorie": "Nudeln",
+    "bild": "/assets/img/Lasagne.jpg"
   },
   {
     "name": "Gnocchi in Gorgonzola-Soße",
-    "rezept": "Kartoffelgnocchi in cremiger Gorgonzola-Käsesoße.",
+    "beschreibung": "Weiche Kartoffelgnocchi in cremiger Blauschimmelkäsesoße.",
     "preis": 9.89,
-    "beschreibung": "Sämige, würzige Verführung aus Norditalien."
+    "kategorie": "Nudeln",
+    "bild": "/assets/img/NudelGorga.png"
   },
+
   {
-    "name": "Thai Curry mit Kokosmilch",
-    "rezept": "Würziges Curry mit Gemüse, Kokosmilch und roter Currypaste.",
-    "preis": 10.49,
-    "beschreibung": "Exotisch, leicht scharf und sehr aromatisch."
+    "name": "Tiramisu",
+    "beschreibung": "Italienisches Dessert mit Kaffee und Mascarpone.",
+    "preis": 4.99,
+    "kategorie": "Dessert",
+    "bild": "/assets/img/Tiramisu.jpg"
   },
   {
     "name": "Apfelstrudel",
-    "rezept": "Warmer Strudel mit Äpfeln, Zimt und Rosinen im knusprigen Teig.",
+    "beschreibung": "Warmer Strudel mit Äpfeln, Zimt und Rosinen. Dazu Vanillesauce.",
     "preis": 4.59,
-    "beschreibung": "Österreichischer Dessertklassiker – süß und fruchtig."
+    "kategorie": "Dessert",
+    "bild": "/assets/img/Apfelstrudel.jpg"
+  },
+  {
+    "name": "Panna Cotta",
+    "beschreibung": "Italienisches Sahnedessert mit Fruchtsauce.",
+    "preis": 4.50,
+    "kategorie": "Dessert",
+    "bild": "/assets/img/PannaCotta.jpg"
+  },
+  {
+    "name": "Vanilles Eis",
+    "beschreibung": "Italienisches Vanille Eiscreme mit Sahne.",
+    "preis": 2.99,
+    "kategorie": "Dessert",
+    "bild": "/assets/img/Ice.jpg"
   }
 ]
 

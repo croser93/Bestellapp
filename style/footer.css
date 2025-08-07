@@ -1,59 +1,73 @@
 footer {
-    margin-top: auto;
+margin-top: auto;
 
- }
+}
 
 .footer_section{
-    width: 100%;
-    background-color: FF8000;
+width: 100%;
+background-color: FF8000;
 
 
 }
 .icon-image{
-    height: 48px;
-    margin: 0px 3px;
-    border-radius: 12px;
+height: 48px;
+margin: 0px 3px;
+border-radius: 12px;
 }
 
 .footer-line {
-    margin-top: 10px;
-    display: contents;
-    align-items: center;
-    justify-content: space-around;
-    
+margin-top: 24px;
+display: flex;
+align-items: center;
+justify-content: space-around;
+
 }
 .footer_middl_line {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: aliceblue;
+display: flex;
+align-items: center;
+color: aliceblue;
+justify-content: space-around;
+margin-top: 16px;
 }
 
 .impressum{
-    text-decoration: none;
-    color: aliceblue;
-    
+text-decoration: none;
+color: aliceblue;
+
 }
 
 .impressum:hover{
-    text-decoration:underline;
-     
+text-decoration:underline;
+
 }
 
 .sep{
-    width: 2px;
-    height: 24px;
-    background-color: aliceblue;
+width: 2px;
+height: 24px;
+background-color: aliceblue;
 }
 
 .impressum_container{
-    padding-top: 200px;
-    padding-bottom: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color: white;
+padding-top: 200px;
+padding-bottom: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+text-align: center;
+color: white;
 }
 
+.together{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+}
+
+@media (max-width: 700px){
+    .icon-image {
+    height: 34px;
+}
+
+}

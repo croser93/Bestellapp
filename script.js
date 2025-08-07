@@ -51,26 +51,3 @@ function renderCart() {
     
     
 }
-
-// ########################################################## Add to Cart ##########################################################
-
-// function addToCart(mealIndex) {
-//     const selectedMeal = meals[mealIndex];// Get the meal
-
-//     const existing = cart.find(m => m.name === selectedMeal.name);
-//     if (existing) {
-//         existing.quantity++;
-        
-
-//     } else {
-//         // Erstes Mal → quantity hinzufügen
-//         const mealCopy = { ...selectedMeal, quantity: 1 };
-//         cart.push(mealCopy);
-//     }
-
-//         renderCart();  // Display the new shopping cart
-
-    
-        
-    
-// }
