@@ -65,6 +65,13 @@ align-items: center;
 gap: 8px;
 }
 
+.together_Im_Co{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 8px;
+}
+
 @media (max-width: 700px){
     .icon-image {
     height: 34px;

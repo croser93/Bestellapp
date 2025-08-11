@@ -38,6 +38,7 @@ width: 100%;
 h2 {
 color: white;
 font-size: 46px;
+text-shadow: 2px 2px 1px black;
 }
 
 h3 {
@@ -123,6 +124,38 @@ border-radius: 8px;
 height: 250px;
 width: 1000px;
 }
+/* ##################################### Cart Resp  ############################################# */
+
+.dialogCarttest{
+position: fixed;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+background-color: white;
+border-radius: 8px;
+padding: 100px 100px;
+box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
+pointer-events: none;
+transition: ease-in-out 600ms;
+opacity: 0;
+}
+
+.baskedRes{
+width: 450px;
+background-color: white;
+border-style:groove;
+border-color: rgba(128, 128, 128, 0.3);
+border-radius: 16px;
+padding: 16px;
+flex-grow: 1;
+
+}
+
+.opa{
+  opacity: 1;
+  pointer-events: initial;
+}
+
 
 /* ##################################### Cart Icon  ############################################# */
 
@@ -168,10 +201,9 @@ height: 20px;
 }
 
 .cartResponsivContainer{
-display: flex;
+display: none;
 justify-content: center;
 margin-bottom: 16px;
-width: calc(100% - 308px);
 align-items: center;
 }
 
@@ -179,11 +211,9 @@ align-items: center;
 background-color: rgb(48, 117, 247);
 color: white;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-padding: 16px 340px;
+padding: 16px;
 border-radius: 16px;
-width: 100%;
 flex: 1;
-
 
 
 }
@@ -191,13 +221,24 @@ flex: 1;
 /* ##################################### Responsiv ############################################# */
 @media (max-width: 900px){
     p{
-      color: black;
+
       font-size: 16px;
     }
 
     h2{
       font-size: 32px;
-      color: black;
 
     }
 }
+
+@media (max-width: 350px){
+    p{
+
+      font-size: 14px;
+    }
+
+        h2{
+      font-size: 28px;
+
+    }
+  }

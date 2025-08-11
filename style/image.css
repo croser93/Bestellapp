@@ -7,12 +7,14 @@
     height: 300px;
     width: 100%;
     object-fit: cover;
+    filter: blur(1px);
 }
 
 .headerInfo {
     position: absolute;
     top: 320px;
     left: 10px;
+    text-shadow: 2px 2px 1px black;
     
 }
 

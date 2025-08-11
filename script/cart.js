@@ -81,6 +81,10 @@ function updatePrices() {
     document.getElementById('dialog_delivery').innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
     document.getElementById('dialog_total').innerText = total.toFixed(2)+ "€";
     
+    document.getElementById('carResSubtotal').innerText = subtotal.toFixed(2)+ "€";
+    document.getElementById('carResDelivery').innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
+    document.getElementById('carResTotal').innerText = total.toFixed(2)+ "€";
+
     renderCart();
 
 }
@@ -171,3 +175,41 @@ function updateCartBadge() {
 
 
 
+function toggleDialogRes(event) {
+
+  if (event.target !== event.currentTarget) 
+    return
+
+   if (cart.length === 0) {
+        alert("⚠️ Du musst erst etwas in den Warenkorb legen.");
+        return;
+    }
+
+    let overlay = document.getElementById('body-overlay');
+    let dialog = document.getElementById('start_dialog_resp');
+
+    overlay.classList.toggle('sichtbar');
+    dialog.classList.toggle('opa');
+
+
+
+  }
+  
+function toggleDialogtest(event) {
+
+  if (event.target !== event.currentTarget) 
+    return
+
+
+  let dialog = document.getElementById('start_dialog_resp');
+  let dialog1 = document.getElementById('start_dialog');
+    
+  dialog.classList.remove('opa');
+  dialog1.classList.toggle('sichtbar')
+
+    
+    
+
+
+
+  }

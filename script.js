@@ -40,11 +40,14 @@ function loadCartFromLocalStorage() {
 function renderCart() {
 
     const cartRef = document.getElementById("cart-section") 
+    const cartRes = document.getElementById("cart-section_Res")
 
     cartRef.innerHTML = ""// clean / empty
+    cartRes.innerHTML = ""
 
     for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
         cartRef.innerHTML += cartTemplateToIndex(cartIndex) // get the content
+        cartRes.innerHTML += cartTemplateToIndex(cartIndex)
 
           
     }
