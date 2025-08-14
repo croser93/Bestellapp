@@ -72,7 +72,7 @@ background-color: #FF8000;
 color: white;
 font-size: 20px;
 padding: 8px;
-border-radius: 50px;
+border-radius: 50px 
 }
 
 .delete {
@@ -190,9 +190,9 @@ color: #aa6117;
 
 }
 
-.test{
-min-width: 740px; 
-/* muss villeicht noch mal geändert werden? soll den Preis in eine Reihe Bringen */
+.confirmation {
+  height: auto;
+  
 }
 
 .loader {
@@ -209,6 +209,8 @@ min-width: 740px;
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* ##################################### Responsiv ############################################# */
 
 @media (max-width: 1200px){
 
@@ -245,6 +247,8 @@ font-size: 18px;
 }
 
 }
+
+
 
 @media (max-width: 995px){
 
@@ -284,7 +288,7 @@ display: flex;
     align-items: center;
   }
 
-  button {
+  .button_Res {
     background-color: rgb(247, 112, 2);
     color: white;
     border: none;
@@ -304,6 +308,10 @@ display: flex;
     padding: 32px 0px;
   }
 
+  .cart-quantity{
+  gap: 12px;
+}
+
 }
 
 @media (max-width: 420px){
@@ -318,9 +326,11 @@ display: flex;
 margin: 8px 2px;
 }
 
-    .broder {
-      margin: 20px 8px;
+  .broder {
+  margin: 20px 8px;
 }
+
+
 }
 
 @media (max-width: 390px){

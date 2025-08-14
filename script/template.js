@@ -13,7 +13,6 @@ function mealTemplateToIndex(mealIndex) {
     </div>
 
  `
- // Diese funktion entnimmt die Informationen aus der Datenbank und zeigt diese als HTML an
 };
 
 function cartTemplateToIndex (cartIndex) {
@@ -38,6 +37,4 @@ function cartTemplateToIndex (cartIndex) {
  
     `
 };
-
-// Diese funktion benutzt die daten
 

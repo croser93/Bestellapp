@@ -1,5 +1,5 @@
 function addToCart(mealIndex) {
-    const selectedMeal = meals[mealIndex];// Get the meal
+    const selectedMeal = meals[mealIndex];
 
     const existing = cart.find(m => m.name === selectedMeal.name);
     if (existing) {
@@ -7,7 +7,6 @@ function addToCart(mealIndex) {
         
 
     } else {
-        // Erstes Mal → quantity hinzufügen
         const mealCopy = { ...selectedMeal, quantity: 1 };
         cart.push(mealCopy);
     }
@@ -39,9 +38,9 @@ function increaseAmount(cartIndex) {
 function decreaseAmount(cartIndex) {
     if (cart[cartIndex]) {
         if (cart[cartIndex].quantity > 1) {
-            cart[cartIndex].quantity--; // verringere die Menge
+            cart[cartIndex].quantity--; 
         } else {
-            cart.splice(cartIndex, 1); // entferne das Gericht ganz
+            cart.splice(cartIndex, 1);
         }
         updatePrices();
         renderCart();
@@ -135,10 +134,8 @@ function toggleDialog(event) {
         formular.addEventListener("submit", function (event) {
             event.preventDefault();
 
-            // Gesamtpreis holen
             const preisText = document.getElementById("dialog_total").textContent;
 
-            // Formular durch Bestätigung ersetzen
             dialog.innerHTML = `
                 <div class="confirmation">
                     <div class="loader"></div>
@@ -147,11 +144,9 @@ function toggleDialog(event) {
                     <p>Du wirst gleich zurückgeleitet...</p>
                 </div>
             `;
-
-            // Nach 3,5 Sekunden Seite neu laden
             setTimeout(() => {
                 location.reload();
-            }, 3500);
+            }, 35000);
         });
     }
 });
@@ -167,8 +162,8 @@ function updateCartBadge() {
 
     if (badge) {
         if (badge) {
-        badge.innerText = totalQty > 0 ? totalQty : "0";  // Mindestens 0 anzeigen
-        badge.style.display = 'flex';  // Immer anzeigen
+        badge.innerText = totalQty > 0 ? totalQty : "0";
+        badge.style.display = 'flex';
         }
     }
 }
@@ -180,11 +175,6 @@ function toggleDialogRes(event) {
   if (event.target !== event.currentTarget) 
     return
 
-   if (cart.length === 0) {
-        alert("⚠️ Du musst erst etwas in den Warenkorb legen.");
-        return;
-    }
-
     let overlay = document.getElementById('body-overlay');
     let dialog = document.getElementById('start_dialog_resp');
 
@@ -195,21 +185,20 @@ function toggleDialogRes(event) {
 
   }
   
-function toggleDialogtest(event) {
+function toggleDialogBestellen(event) {
 
   if (event.target !== event.currentTarget) 
     return
 
+    if (cart.length === 0) {
+        alert("⚠️ Du musst erst etwas in den Warenkorb legen.");
+        return;
+    }
 
   let dialog = document.getElementById('start_dialog_resp');
   let dialog1 = document.getElementById('start_dialog');
     
   dialog.classList.remove('opa');
   dialog1.classList.toggle('sichtbar')
-
-    
-    
-
-
 
   }

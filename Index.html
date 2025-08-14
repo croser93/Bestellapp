@@ -46,7 +46,7 @@
 
     <!--                    Template Cart Section                      -->
 
-        <div id="testwarenkorb" class="basked">
+        <div class="basked">
             <div class="sticky">
                 <div class="sticky_warenkorb" id="cart-section">
                     <div class="slogan_div">
@@ -125,6 +125,9 @@
     </footer>
 
 
+
+
+
     <!--                    Dialog Section                      -->
 
     <section id="body-overlay" class="body-overlay">
@@ -154,17 +157,14 @@
                     <span id="dialog_total">0€</span>
                 </div>  
             </div>
-
             <button type="submit" class="bestellen margintop24">Kostenpflichtig Bestellen</button>
         </form>
     </section>
 
 
+    <!--                    Dialog Cart Responsiv Section                      -->
 
-
-
-
-    <section class="dialogCarttest sichtbar" id="start_dialog_resp">
+    <section class="dialogCarttest" id="start_dialog_resp">
         <div class="baskedRes">
             <div class="sticky">
                 <div class="sticky_warenkorb" id="cart-section_Res"></div>
@@ -188,7 +188,8 @@
                 <div class="line-dividers"></div>
 
                 <div class="pay_delete">
-                    <Button class="bestellen" onclick="toggleDialogtest(event)">Bestellen</Button>
+                    <button class="close_dialog_Resp" onclick="toggleDialogRes(event)"> x</button>
+                    <Button class="bestellen" onclick="toggleDialogBestellen(event)">Bestellen</Button>
                     <Button onclick="cleanCartAll()"><img class="delete" src="assets/icon/trash.png" alt="junk"></Button>
                 </div>
             </div>
