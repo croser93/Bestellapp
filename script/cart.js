@@ -146,7 +146,7 @@ function toggleDialog(event) {
             `;
             setTimeout(() => {
                 location.reload();
-            }, 35000);
+            }, 3500);
         });
     }
 });
