@@ -114,8 +114,8 @@ function load_screen() {
             form.style = "display: none"; // Formular wird ausgeblendet
 
             setTimeout(() => {
-            window.location.href = "index.html"; // kein refresh sonder verlinkung zur Index
-            }, 3500);
+            window.location.href = "./Index.html"; // kein refresh sonder verlinkung zur Index
+            }, 3000);
         });
     }
 }
