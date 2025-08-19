@@ -252,6 +252,10 @@ font-size: 18px;
 
 @media (max-width: 995px){
 
+.cart-Icon-Container{
+  display: flex;
+}
+
 .basked{
     display: none;
 }

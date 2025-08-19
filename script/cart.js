@@ -5,15 +5,11 @@ function addToCart(mealIndex) {
     if (existing) {
         existing.quantity++;
         
-
     } else {
         const mealCopy = { ...selectedMeal, quantity: 1 };
         cart.push(mealCopy);
     }
-        updatePrices();
-        renderCart(); 
-        updateCartBadge();
- 
+    runFunctions()
 }
 
 function increaseAmount(cartIndex) {
@@ -23,11 +19,8 @@ function increaseAmount(cartIndex) {
         }
         cart[cartIndex].quantity++;
 
-        updatePrices();
-        renderCart();
-        updateCartBadge();
+        runFunctions()
         
-    
         const quantityRef = document.getElementById(`quantity-${cartIndex}`);
         if (quantityRef) {
             quantityRef.innerText = cart[cartIndex].quantity;
@@ -42,23 +35,19 @@ function decreaseAmount(cartIndex) {
         } else {
             cart.splice(cartIndex, 1);
         }
-        updatePrices();
-        renderCart();
-        updateCartBadge();
+
+        runFunctions()
 
         const quantityRef = document.getElementById(`quantity-${cartIndex}`);
         if (quantityRef) {
             quantityRef.innerText = cart[cartIndex].quantity;
-        }
-
-        
+        }      
     }
 }
 
 function updatePrices() {
 
     let subtotal = 0;
-
 
     for (let item of cart) {
         subtotal+= item.preis * item.quantity;
@@ -71,6 +60,11 @@ function updatePrices() {
         total = 0
         
     }
+    cart_prices(subtotal, delivery, total);
+    renderCart();
+}
+
+function cart_prices(subtotal, delivery, total) { // Ausgelagert 
 
     document.getElementById("subtotal").innerText = subtotal.toFixed(2)+ "€";
     document.getElementById("delivery").innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
@@ -84,26 +78,9 @@ function updatePrices() {
     document.getElementById('carResDelivery').innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
     document.getElementById('carResTotal').innerText = total.toFixed(2)+ "€";
 
-    renderCart();
-
-}
-
-function cleanCartOnly(cartIndex) {
-
-    cart.splice(cartIndex,1);
-
-    updatePrices();
-    renderCart();
-    updateCartBadge();
-}
-
-function cleanCartAll() {
-   
-   cart.length = 0
-
-    updatePrices();
-    renderCart();
-    updateCartBadge();
+    document.getElementById('price_text').innerText = total.toFixed(2)+ "€";
+    
+    
 }
 
 function toggleDialog(event) {
@@ -112,45 +89,36 @@ function toggleDialog(event) {
     return
 
    if (cart.length === 0) {
-        alert("⚠️ Du musst erst etwas in den Warenkorb legen.");
+        alert(" Du musst erst etwas in den Warenkorb legen.");
         return;
     }
 
     let overlay = document.getElementById('body-overlay');
     let dialog = document.getElementById('start_dialog');
     
-    overlay.classList.toggle('sichtbar');
-    dialog.classList.toggle('sichtbar')
-
-
-
+    overlay.classList.toggle('visible');
+    dialog.classList.toggle('visible')
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const formular = document.getElementById("bestellformular");
-    const dialog = document.getElementById("start_dialog");
 
-    if (formular) {
-        formular.addEventListener("submit", function (event) {
+
+function load_screen() {
+    const form = document.getElementById("order_form");
+    const confirmation = document.getElementById("confirmation");
+
+    if (form) {
+        form.addEventListener("submit", function(event) {
             event.preventDefault();
 
-            const preisText = document.getElementById("dialog_total").textContent;
+            confirmation.style = ""; // zeigt loading screen an
+            form.style = "display: none"; // Formular wird ausgeblendet
 
-            dialog.innerHTML = `
-                <div class="confirmation">
-                    <div class="loader"></div>
-                    <p>🎉 Vielen Dank für deine Bestellung über <strong>${preisText}</strong>!</p>
-                    <p>Deine Bestellung ist bei uns eingegangen und wird jetzt bearbeitet.</p>
-                    <p>Du wirst gleich zurückgeleitet...</p>
-                </div>
-            `;
             setTimeout(() => {
-                location.reload();
+            window.location.href = "index.html"; // kein refresh sonder verlinkung zur Index
             }, 3500);
         });
     }
-});
-
+}
 
 function getTotalQuantity() {
     return cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
@@ -168,8 +136,6 @@ function updateCartBadge() {
     }
 }
 
-
-
 function toggleDialogRes(event) {
 
   if (event.target !== event.currentTarget) 
@@ -178,12 +144,9 @@ function toggleDialogRes(event) {
     let overlay = document.getElementById('body-overlay');
     let dialog = document.getElementById('start_dialog_resp');
 
-    overlay.classList.toggle('sichtbar');
-    dialog.classList.toggle('opa');
-
-
-
-  }
+    overlay.classList.toggle('visible');
+    dialog.classList.toggle('visible_cart');
+}
   
 function toggleDialogBestellen(event) {
 
@@ -191,14 +154,35 @@ function toggleDialogBestellen(event) {
     return
 
     if (cart.length === 0) {
-        alert("⚠️ Du musst erst etwas in den Warenkorb legen.");
+        alert(" Du musst erst etwas in den Warenkorb legen.");
         return;
     }
 
   let dialog = document.getElementById('start_dialog_resp');
   let dialog1 = document.getElementById('start_dialog');
     
-  dialog.classList.remove('opa');
-  dialog1.classList.toggle('sichtbar')
+  dialog.classList.remove('visible_cart');
+  dialog1.classList.toggle('visible')
+}
 
-  }
+function runFunctions() { // mehrere Funktionen in eine Gepark um Funktionen zu kürzen
+
+    updatePrices();
+    renderCart(); 
+    updateCartBadge();  
+}
+
+
+function cleanCartOnly(cartIndex) {
+
+    cart.splice(cartIndex,1);
+    runFunctions()
+}
+
+
+function cleanCartAll() {
+   
+   cart.length = 0
+   runFunctions()
+}
+

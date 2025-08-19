@@ -110,8 +110,6 @@
                             <a href="https://www.facebook.com"><img class="icon-image" src="./assets/icon/facebook.png" alt=""></a>
                             </div>
                             <div class="together_Im_Co">
-                                <a class="impressum" href="./Index/impressum.html">Impressum</a>
-                                <div class="sep"></div>
                                 <span> © 2024 Bestellapp</span>
                             </div>
                             <div class="together">
@@ -133,8 +131,17 @@
     <section id="body-overlay" class="body-overlay">
         <div class="dialog" id="start_dialog">
             <button class="close_dialog" onclick="toggleDialog(event)"> x</button>
+        
+        <section>
+            <div class="confirmation" id="confirmation" style="display: none;">
+                <div class="loader"></div>
+                <p>🎉 Vielen Dank für deine Bestellung über <strong id="price_text">5</strong>!</p>
+                <p>Deine Bestellung ist bei uns eingegangen und wird jetzt bearbeitet.</p>
+                <p>Du wirst gleich zurückgeleitet...</p>
+            </div>
+        </section>
 
-        <form id="bestellformular" class="margintop24">
+        <form id="order_form" class="margintop24">
             <h3>Gibt deine Daten ein</h3>
             <input type="text" placeholder="Vorname" class="eingabefeld" required>
             <input type="text" placeholder="Nachname" class="eingabefeld" required>  
@@ -142,7 +149,7 @@
             <input type="text" placeholder="Hausnummer" class="eingabefeld" required>
             <input type="text" placeholder="Postleitzahl" class="eingabefeld" required>  
             <input type="email" placeholder="Email" class="eingabefeld" required>  
-
+        
             <div id="cart-section" class="total-line">
                 <div class="summary-line">
                     <span>Zwischensumme:</span>
@@ -157,9 +164,10 @@
                     <span id="dialog_total">0€</span>
                 </div>  
             </div>
-            <button type="submit" class="bestellen margintop24">Kostenpflichtig Bestellen</button>
+            <button type="submit" onclick="load_screen()" id="submit" class="bestellen margintop24">Kostenpflichtig Bestellen</button>
         </form>
     </section>
+
 
 
     <!--                    Dialog Cart Responsiv Section                      -->

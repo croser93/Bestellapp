@@ -82,7 +82,7 @@ transition: ease-in-out 600ms;
 
 }
 
-.sichtbar{
+.visible{
 opacity: 1;
 pointer-events: auto;
 }
@@ -161,7 +161,7 @@ flex-grow: 1;
 
 
 
-.opa{
+.visible_cart{
   opacity: 1;
   pointer-events: initial;
 }
@@ -192,6 +192,7 @@ position: sticky;
 top: 15px;
 flex-direction: column;
 margin: 8px;
+display: none;
 }
 
 #cart-quantity {
