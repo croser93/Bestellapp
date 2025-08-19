@@ -24,7 +24,7 @@
         <div><img class="iconImage broder" src="./assets/img/Bestell App- Logo.svg" alt="logo"></div>
     </header>
 
-    <section>
+    <nav>
         <img class="headerImage" src="./assets/img/fast-food-6974507_1280.jpg" alt="" p class="bewertung">
         <div class="content_beg_1440px broder">
             <div class="headerInfo">
@@ -36,80 +36,67 @@
                 </div>
             </div>
         </div>
-    </section>
+    </nav>
 
-    <!-- headerInfo -->
 
-    <!--                   Start Template Content                      -->
- <section class="main grid">
-    <section class="content_beg_1440px double-content broder">
-    
-    <!--                    Template Eat Section                      -->
-        <div class="df_column">
-            <div class="maincontent" id="meal-section"></div>
-            <button  onclick="toggleDialogRes(event)" class="cartResponsiv">Warenkorb</button>
-            
-        </div>
-    
-    <!--                    Template Cart Section                      -->
+    <main class="main grid">
+        <section class="content_beg_1440px double-content broder">
+        
+        <!--                    Template Eat Section                      -->
+            <div class="df_column">
+                <div class="maincontent" id="meal-section"></div>
+                <button  onclick="toggleDialogRes(event)" class="cartResponsiv">Warenkorb</button>
+                
+            </div>
+        
+        <!--                    Template Cart Section                      -->
 
-        <div class="basked">
-            <div class="sticky">
-                <div class="sticky_warenkorb" id="cart-section">
-                    <div class="slogan_div">
-                        <p class="slogan">Hör ich da etwa deinen Magen?</p>
-                        <p class="slogan">Schnell! dein Warenkorb ist noch leer!</p>
+            <div class="basked">
+                <div class="sticky">
+                    <div class="sticky_warenkorb" id="cart-section">
+                        <div class="slogan_div">
+                            <p class="slogan">Hör ich da etwa deinen Magen?</p>
+                            <p class="slogan">Schnell! dein Warenkorb ist noch leer!</p>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="total-line">
-                    <div class="summary-line">
-                        <span>Zwischensumme:</span>
-                        <span id="subtotal">0€</span>
+                    <div class="total-line">
+                        <div class="summary-line">
+                            <span>Zwischensumme:</span>
+                            <span id="subtotal">0€</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Liefergebühr:</span>
+                            <span id="delivery">5.99€</span>
+                        </div>
+                        <div class="summary-line total">
+                            <span>Gesamtsumme:</span>
+                            <span id="total">0€</span>
+                        </div>
+                        
                     </div>
-                    <div class="summary-line">
-                        <span>Liefergebühr:</span>
-                        <span id="delivery">5.99€</span>
-                    </div>
-                    <div class="summary-line total">
-                        <span>Gesamtsumme:</span>
-                        <span id="total">0€</span>
-                    </div>
-                    
-                </div>
-                <div class="line-dividers"></div>
+                    <div class="line-dividers"></div>
 
-                <div class="pay_delete">
-                    <Button class="bestellen" onclick="toggleDialog(event)">Bestellen</Button>
-                    <Button onclick="cleanCartAll()"><img class="delete" src="assets/icon/trash.png" alt="junk"></Button>
+                    <div class="pay_delete">
+                        <Button class="bestellen" onclick="toggleDialog(event)">Bestellen</Button>
+                        <Button onclick="cleanCartAll()"><img class="delete" src="assets/icon/trash.png" alt="junk"></Button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class=".cart-basked">
-            <div class="cart-Icon-Container">
-                <button id="cart-Icon">
-                    <img class="cart-image" src="./assets/icon/cart.png" alt="">
-                    <p class="test2109" id="cart-quantity">0</p>
-                </button>
+            <div class=".cart-basked">
+                <div class="cart-Icon-Container">
+                    <button id="cart-Icon">
+                        <img class="cart-image" src="./assets/icon/cart.png" alt="">
+                        <p class="test2109" id="cart-quantity">0</p>
+                    </button>
+                </div>
             </div>
-        </div>
-    </section>
-        <!-- <div class="cartResponsivContainer broder">
-            <button  onclick="toggleDialogRes(event)" class="cartResponsiv">Warenkorb</button>
-        </div> -->
- </section>
+        </section>
+    </main>
 
 
-  
-
-    
-
-
-
-    
-    <!--                    footer Section                      -->    
 
     <footer>
         <div class="footer_section full-width-container">
@@ -137,84 +124,84 @@
 
 
 
-    <!--                    Dialog Section                      -->
+    <Section class="Dialogs">
 
-    <section id="body-overlay" class="body-overlay">
-        <div class="dialog" id="start_dialog">
-            <button class="close_dialog" onclick="toggleDialog(event)"> x</button>
-        
-        <section>
-            <div class="confirmation" id="confirmation" style="display: none;">
-                <div class="loader"></div>
-                <p>🎉 Vielen Dank für deine Bestellung über <strong id="price_text">5</strong>!</p>
-                <p>Deine Bestellung ist bei uns eingegangen und wird jetzt bearbeitet.</p>
-                <p>Du wirst gleich zurückgeleitet...</p>
-            </div>
-        </section>
-
-        <form id="order_form" class="margintop24">
-            <h3>Gibt deine Daten ein</h3>
-            <input type="text" placeholder="Vorname" class="eingabefeld" required>
-            <input type="text" placeholder="Nachname" class="eingabefeld" required>  
-            <input type="text" placeholder="Straße" class="eingabefeld" required>
-            <input type="text" placeholder="Hausnummer" class="eingabefeld" required>
-            <input type="text" placeholder="Postleitzahl" class="eingabefeld" required>  
-            <input type="email" placeholder="Email" class="eingabefeld" required>  
-        
-            <div id="cart-section" class="total-line">
-                <div class="summary-line">
-                    <span>Zwischensumme:</span>
-                    <span id="dialog_subtotal">0€</span>
+        <section id="body-overlay" class="body-overlay">
+            <div class="dialog" id="start_dialog">
+                <button class="close_dialog" onclick="toggleDialog(event)"> x</button>
+            
+            <section>
+                <div class="confirmation" id="confirmation" style="display: none;">
+                    <div class="loader"></div>
+                    <p>🎉 Vielen Dank für deine Bestellung über <strong id="price_text">5</strong>!</p>
+                    <p>Deine Bestellung ist bei uns eingegangen und wird jetzt bearbeitet.</p>
+                    <p>Du wirst gleich zurückgeleitet...</p>
                 </div>
-                <div class="summary-line">
-                    <span>Liefergebühr:</span>
-                    <span id="dialog_delivery">5.99€</span>
-                </div>
-                <div class="summary-line total">
-                    <span>Gesamtsumme:</span>
-                    <span id="dialog_total">0€</span>
-                </div>  
-            </div>
-            <button type="submit" onclick="load_screen()" id="submit" class="bestellen margintop24">Kostenpflichtig Bestellen</button>
-        </form>
-    </section>
+            </section>
 
-
-
-    <!--                    Dialog Cart Responsiv Section                      -->
-
-    <section class="dialogCarttest" id="start_dialog_resp">
-        <div class="baskedRes">
-            <div class="sticky">
-                <div class="sticky_warenkorb" id="cart-section_Res"></div>
-
-
-                <div class="total-line">
+            <form id="order_form" class="margintop24">
+                <h3>Gibt deine Daten ein</h3>
+                <input type="text" placeholder="Vorname" class="eingabefeld" required>
+                <input type="text" placeholder="Nachname" class="eingabefeld" required>  
+                <input type="text" placeholder="Straße" class="eingabefeld" required>
+                <input type="text" placeholder="Hausnummer" class="eingabefeld" required>
+                <input type="text" placeholder="Postleitzahl" class="eingabefeld" required>  
+                <input type="email" placeholder="Email" class="eingabefeld" required>  
+            
+                <div id="cart-section" class="total-line">
                     <div class="summary-line">
                         <span>Zwischensumme:</span>
-                        <span id="carResSubtotal">0€</span>
+                        <span id="dialog_subtotal">0€</span>
                     </div>
                     <div class="summary-line">
                         <span>Liefergebühr:</span>
-                        <span id="carResDelivery">5.99€</span>
+                        <span id="dialog_delivery">5.99€</span>
                     </div>
                     <div class="summary-line total">
                         <span>Gesamtsumme:</span>
-                        <span id="carResTotal">0€</span>
-                    </div>
-                    
+                        <span id="dialog_total">0€</span>
+                    </div>  
                 </div>
-                <div class="line-dividers"></div>
+                <button type="submit" onclick="load_screen()" id="submit" class="bestellen margintop24">Kostenpflichtig Bestellen</button>
+            </form>
+        </section>
 
-                <div class="pay_delete">
-                    <button class="close_dialog_Resp" onclick="toggleDialogRes(event)"> x</button>
-                    <Button class="bestellen" onclick="toggleDialogBestellen(event)">Bestellen</Button>
-                    <Button onclick="cleanCartAll()"><img class="delete" src="assets/icon/trash.png" alt="junk"></Button>
+
+
+        <!--                    Dialog Cart Responsiv Section                      -->
+
+        <section class="dialogCarttest" id="start_dialog_resp">
+            <div class="baskedRes">
+                <div class="sticky">
+                    <div class="sticky_warenkorb" id="cart-section_Res"></div>
+
+
+                    <div class="total-line">
+                        <div class="summary-line">
+                            <span>Zwischensumme:</span>
+                            <span id="carResSubtotal">0€</span>
+                        </div>
+                        <div class="summary-line">
+                            <span>Liefergebühr:</span>
+                            <span id="carResDelivery">5.99€</span>
+                        </div>
+                        <div class="summary-line total">
+                            <span>Gesamtsumme:</span>
+                            <span id="carResTotal">0€</span>
+                        </div>
+                        
+                    </div>
+                    <div class="line-dividers"></div>
+
+                    <div class="pay_delete">
+                        <button class="close_dialog_Resp" onclick="toggleDialogRes(event)"> x</button>
+                        <Button class="bestellen" onclick="toggleDialogBestellen(event)">Bestellen</Button>
+                        <Button onclick="cleanCartAll()"><img class="delete" src="assets/icon/trash.png" alt="junk"></Button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-    </section>
-
+        </section>
+    </Section>
 </body>
 </html>
