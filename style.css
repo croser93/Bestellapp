@@ -11,6 +11,9 @@ body {
 font-family: Arial, sans-serif; 
 background-color: #FF8000;
 overflow: auto;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
 }
 
 header {
@@ -19,6 +22,22 @@ align-items: center;
 justify-content: space-between;
 }
 
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.grid{
+  flex: 1;
+
+}
+
+.df_column{
+  display: flex;
+  flex-direction: column;
+}
+
+
 .broder {
 margin: 20px 80px;
 }
@@ -26,7 +45,7 @@ margin: 20px 80px;
 max-width: 1440px;
 box-sizing: border-box;
 padding: 10px 10px;
-
+margin: auto;
 }
 
 .separator {
@@ -219,6 +238,7 @@ align-items: center;
 }
 
 .cartResponsiv{
+display: none;
 background-color: rgb(48, 117, 247);
 color: white;
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -230,6 +250,8 @@ flex: 1;
 }
 
 /* ##################################### Responsiv ############################################# */
+
+
 
 @media (max-width: 900px){
 p{

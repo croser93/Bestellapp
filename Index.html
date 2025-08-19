@@ -26,24 +26,31 @@
 
     <section>
         <img class="headerImage" src="./assets/img/fast-food-6974507_1280.jpg" alt="" p class="bewertung">
-        <div class="headerInfo broder">
-            <h2>Bestellapp Kitchen</h2> 
-            <div class="info">
-                <p>⭐ (4,5 von 5 Sternen)</p>
-                <p>⏱ In 10 min. Bearbeitet</p>
-                <P>🚚 Ab 60€ Gratis </P>
+        <div class="content_beg_1440px broder">
+            <div class="headerInfo">
+                <h2>Bestellapp Kitchen</h2> 
+                <div class="info">
+                    <p>⭐ (4,5 von 5 Sternen)</p>
+                    <p>⏱ In 10 min. Bearbeitet</p>
+                    <P>🚚 Ab 60€ Gratis </P>
+                </div>
             </div>
         </div>
     </section>
 
+    <!-- headerInfo -->
+
     <!--                   Start Template Content                      -->
-
+ <section class="main grid">
     <section class="content_beg_1440px double-content broder">
-
+    
     <!--                    Template Eat Section                      -->
-
-        <div class="maincontent" id="meal-section"></div>
-
+        <div class="df_column">
+            <div class="maincontent" id="meal-section"></div>
+            <button  onclick="toggleDialogRes(event)" class="cartResponsiv">Warenkorb</button>
+            
+        </div>
+    
     <!--                    Template Cart Section                      -->
 
         <div class="basked">
@@ -89,12 +96,15 @@
             </div>
         </div>
     </section>
-    
-    <div class="cartResponsivContainer broder">
-        <button  onclick="toggleDialogRes(event)" class="cartResponsiv">Warenkorb</button>
-    </div>
+        <!-- <div class="cartResponsivContainer broder">
+            <button  onclick="toggleDialogRes(event)" class="cartResponsiv">Warenkorb</button>
+        </div> -->
+ </section>
 
-    <div ><img class="separator" src="./assets/separator/sep2.jpg" alt=""></div> 
+
+  
+
+    
 
 
 
@@ -103,21 +113,22 @@
 
     <footer>
         <div class="footer_section full-width-container">
-            <div class="content_beg_1440px broder">                       
-                        <div class="footer_middl_line">
-                            <div class="together">
-                            <a href="https://www.instagram.com"><img class="icon-image" src="./assets/icon/instagram.png" alt=""></a>
-                            <a href="https://www.facebook.com"><img class="icon-image" src="./assets/icon/facebook.png" alt=""></a>
-                            </div>
-                            <div class="together_Im_Co">
-                                <span> © 2024 Bestellapp</span>
-                            </div>
-                            <div class="together">
-                            <a href="https://web.whatsapp.com"><img class="icon-image" src="./assets/icon/logo.png" alt=""></a>
-                            <a href="index.html"><img class="icon-image" src="./assets/icon/fav.png" alt="logo"></a>
-                            </div>
+                <img class="separator" src="./assets/separator/sep2.jpg" alt="">
+                <div class="broder content_beg_1440px">   
+                    <div class="footer_middl_line">
+                        <div class="together">
+                        <a href="https://www.instagram.com"><img class="icon-image" src="./assets/icon/instagram.png" alt=""></a>
+                        <a href="https://www.facebook.com"><img class="icon-image" src="./assets/icon/facebook.png" alt=""></a>
+                        </div>
+                        <div class="together_Im_Co">
+                            <span> © 2024 Bestellapp</span>
+                        </div>
+                        <div class="together">
+                        <a href="https://web.whatsapp.com"><img class="icon-image" src="./assets/icon/logo.png" alt=""></a>
+                        <a href="index.html"><img class="icon-image" src="./assets/icon/fav.png" alt="logo"></a>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </footer>

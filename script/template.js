@@ -11,6 +11,7 @@ function mealTemplateToIndex(mealIndex) {
             </div>
             <button onclick="addToCart(${mealIndex})">+</button>
     </div>
+    
 
  `
 };
