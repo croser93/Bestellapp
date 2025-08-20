@@ -27,7 +27,6 @@ function renderDbMeal() {
     
 }
 
-// ########################################################## Cart Funktion ##########################################################
 function loadCartFromLocalStorage() {
     const cartDB = localStorage.getItem('cart');
     if (cartDB) {
