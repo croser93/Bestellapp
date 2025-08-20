@@ -3,7 +3,7 @@
 function init() {
     loadFromLocalStorage(); 
     loadCartFromLocalStorage(); 
-    renderDbMeal(); 
+    renderDbMeal();
 }
 
 function loadFromLocalStorage() {
@@ -16,7 +16,6 @@ function loadFromLocalStorage() {
 function renderDbMeal() {
 
     const mealRef = document.getElementById("meal-section")
-
     mealRef.innerHTML = ""
 
     for (let mealIndex = 0; mealIndex < meals.length; mealIndex++) {

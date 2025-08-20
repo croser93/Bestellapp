@@ -93,11 +93,11 @@ top: 50%;
 transform: translate(-50%, -50%);
 background-color: white;
 border-radius: 8px;
-padding: 100px 100px;
+padding: 48px 80px;
 box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
 opacity: 0;
 pointer-events: none;
-transition: ease-in-out 600ms;
+transition: ease-in-out 300ms;
 
 }
 
@@ -128,7 +128,7 @@ color: #FF8000;
 }
 
 .slogan_div{
-margin: 240px 16px;
+margin-top: 360px;
 }
 
 .slogan {
@@ -143,20 +143,27 @@ border-radius: 8px;
 height: 250px;
 width: 1000px;
 }
+
+.form_Head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 /* ##################################### Cart Resp  ############################################# */
 
-.dialogCarttest{
+.dialogCartRes{
 position: fixed;
 left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
 background-color: white;
 border-radius: 8px;
-padding: 8px;
+padding: 48px;
 box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.6);
 pointer-events: none;
-transition: ease-in-out 600ms;
+transition: ease-in-out 300ms;
 opacity: 0;
+height: 800px;
 }
 
 .baskedRes{
@@ -166,7 +173,7 @@ border-style:groove;
 border-color: rgba(128, 128, 128, 0.3);
 border-radius: 16px;
 padding: 16px;
-flex-grow: 1;
+height: 100%;
 
 }
 
@@ -252,7 +259,6 @@ flex: 1;
 /* ##################################### Responsiv ############################################# */
 
 
-
 @media (max-width: 900px){
 p{
 
@@ -265,29 +271,46 @@ h2{
 }
 }
 
-@media(max-width: 500px){
+@media(max-width: 580px){
 
 .baskedRes{
-width:auto
+width:300px;
 }
 
 .dialog {
-height: 750px;
 width: 370px;
 padding: 10px;
 display: flex;
 justify-content: center;
 }
+
+.dialogCartRes{
+width: 370px;
+padding: 10px;
+display: flex;
+justify-content: center;
+height: 700px;
+}
+
 input{
 width: 300px;
+height: 36px;
 }
 }
+
 
 @media(max-width: 400px){
 
 .dialog {
 width: 300px;
 }
+
+.dialogCartRes{
+  width: 280px;
+  height: 600px;
+  padding: 0px;
+}
+
 
 input {
   width: 260px;
@@ -303,20 +326,18 @@ gap: 24px;
 }
 
 .close_dialog{
-top: 680px;
-right: 10px;
 color: #FF8000;
+font-size: 34px;
 
 }
 }
 
 @media (max-width: 350px){
 p{
-
   font-size: 14px;
 }
 
-    h2{
+h2{
   font-size: 28px;
 
 }
@@ -324,4 +345,7 @@ p{
   font-size: 14px;
 }
 
-  }
+}
+
+@media(max-height: 400px){
+}
