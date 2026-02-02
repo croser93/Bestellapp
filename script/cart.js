@@ -69,23 +69,26 @@ function updatePrices() {
 }
 
 function cart_PricesSubtotal(subtotal) {
-
-    document.getElementById("subtotal").innerText = subtotal.toFixed(2)+ "€";
-    document.getElementById('dialog_subtotal').innerText = subtotal.toFixed(2)+ "€";  
-    document.getElementById('carResSubtotal').innerText = subtotal.toFixed(2)+ "€";      
+    const id = ["subtotal", "dialog_subtotal", "carResSubtotal"]
+    calc(subtotal, id)
 }
 
 function cart_PricesDelivery(delivery) {
-    document.getElementById("delivery").innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
-    document.getElementById('dialog_delivery').innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
-    document.getElementById('carResDelivery').innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
+    const id = ["delivery", "dialog_delivery", "carResDelivery"]
+    calc(delivery, id)
+
 }
 
 function cart_PricesTotal(total) {
-    document.getElementById("total").innerText = total.toFixed(2)+ "€";
-    document.getElementById('dialog_total').innerText = total.toFixed(2)+ "€";
-    document.getElementById('carResTotal').innerText = total.toFixed(2)+ "€";
-    document.getElementById('price_text').innerText = total.toFixed(2)+ "€";      
+    const id = ["total", "dialog_total", "carResTotal", "price_text"]
+    calc(total, id)
+}
+
+function calc(value, id){
+     const calcvalue = value.toFixed(2)+ "€"
+     id.forEach(ids => {
+        document.getElementById(ids).innerText = calcvalue;
+  });           
 }
 
 function cart_prices(subtotal,delivery,total) {
