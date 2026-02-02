@@ -1,7 +1,5 @@
 function mealTemplateToIndex(mealIndex) {
     return `
-
-    
     <div class="product">
             <img class="foodImage" src="${meals[mealIndex].bild}" alt="">
             <div class="productInfo">  
@@ -11,16 +9,12 @@ function mealTemplateToIndex(mealIndex) {
             </div>
             <button onclick="addToCart(${mealIndex})">+</button>
     </div>
-    
-
  `
 };
 
 function cartTemplateToIndex (cartIndex) {
     const meal = cart[cartIndex];
     return `
-
-  
         <div class="cart-item">
             <div class="cartName-Price">
                 <h3>${meal.name}</h3>

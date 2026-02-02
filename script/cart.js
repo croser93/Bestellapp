@@ -1,15 +1,22 @@
 function addToCart(mealIndex) {
     const selectedMeal = meals[mealIndex];
-
+    
     const existing = cart.find(m => m.name === selectedMeal.name);
     if (existing) 
         existing.quantity++;  
-     else {
+    else {
         const mealCopy = { ...selectedMeal, quantity: 1 };
         cart.push(mealCopy);
     }
     runFunctions()
     
+}
+
+function runFunctions() {
+    updatePrices();
+    renderCart(); 
+    updateCartBadge();
+    cartButtonDisabled();
 }
 
 function increaseAmount(cartIndex) {
@@ -51,7 +58,6 @@ function updatePrices() {
     for (let item of cart) 
         subtotal+= item.preis * item.quantity;
     
-
     let delivery = subtotal >= 60 ? 0 :5.99;
     let total = subtotal + delivery;
 
@@ -73,7 +79,6 @@ function cart_PricesDelivery(delivery) {
     document.getElementById("delivery").innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
     document.getElementById('dialog_delivery').innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
     document.getElementById('carResDelivery').innerText = delivery === 0 ? "Gratis" : delivery.toFixed(2)+ "€";
-    
 }
 
 function cart_PricesTotal(total) {
@@ -86,10 +91,8 @@ function cart_PricesTotal(total) {
 function cart_prices(subtotal,delivery,total) {
     cart_PricesSubtotal(subtotal);
     cart_PricesDelivery(delivery);
-    cart_PricesTotal(total);
-    
+    cart_PricesTotal(total);  
 }
-
 
 function cartButtonDisabled() {
     if (cart.length > 0) {
@@ -178,24 +181,13 @@ function updateCartBadge() {
     }
 }
 
-function runFunctions() {
-
-    updatePrices();
-    renderCart(); 
-    updateCartBadge();
-    cartButtonDisabled();
-}
-
 
 function cleanCartOnly(cartIndex) {
-
     cart.splice(cartIndex,1);
     runFunctions()
 }
 
-
 function cleanCartAll() {
-   
    cart.length = 0
    runFunctions()
 }

@@ -19,19 +19,14 @@ function renderDbMeal() {
     mealRef.innerHTML = ""
 
     for (let mealIndex = 0; mealIndex < meals.length; mealIndex++) {
-        mealRef.innerHTML += mealTemplateToIndex(mealIndex)
-
-          
+        mealRef.innerHTML += mealTemplateToIndex(mealIndex) 
     }
-    
-    
 }
 
 function loadCartFromLocalStorage() {
     const cartDB = localStorage.getItem('cart');
-    if (cartDB) {
+    if (cartDB) 
         cart = JSON.parse(cartDB);
-    }
 }
 
 function renderCart() {
@@ -45,7 +40,7 @@ function renderCart() {
     for (let cartIndex = 0; cartIndex < cart.length; cartIndex++) {
         cartRef.innerHTML += cartTemplateToIndex(cartIndex)
         cartRes.innerHTML += cartTemplateToIndex(cartIndex)
-          
+   
     }
     
 }
